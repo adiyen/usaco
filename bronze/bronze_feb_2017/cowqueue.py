@@ -17,24 +17,19 @@ for i in range(numb_of_cows):
             amount_of_time[i] = amount_of_time[j]
             cow_coming_time[j] = storage_1
             amount_of_time[j] = storage_2
-
-# maximum = cow_coming_time[0] + amount_of_time[0]     
+ 
 max2_needed = True
 maximum = 0
 start_time = cow_coming_time[0]
 for i in range(numb_of_cows-1):
-
     maximum = start_time+amount_of_time[i]
 
     if maximum >= cow_coming_time[i+1]:
         start_time = maximum
     else:
         start_time = cow_coming_time[i+1]
-    #print(i, maximum)
-# if maximum >= cow_coming_time[-1]:
-#     maximum+=amount_of_time[-1]
+
 maximum = start_time+amount_of_time[-1]
 
-    
 with open("cowqueue.out", "w") as fout:
     fout.write(str(maximum))
