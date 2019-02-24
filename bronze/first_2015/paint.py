@@ -7,6 +7,8 @@ with open("paint.in", "r") as fin:
 answer = 0
 
 for i in range(100):
+    if i > max(a, b, c, d):
+        break
     if i > a-1 and i < b:
         answer+=1
     elif i > c-1 and i < d:
